@@ -22,7 +22,7 @@ interests: [Aerospace, Energy Systems, SOLIDWORKS, MATLAB]
 # Contact info (shown in the footer of every page)
 email: oliver.guerrerorazo@gmail.com
 linkedin: https://www.linkedin.com/in/oliver-guerrero-razo/
-github_username: "olivergurrero07"      # optional — fill in to show a GitHub link in the footer
+github_username: "oliverguerrero07"      # optional — fill in to show a GitHub link in the footer
 footer_note: "Open to internships, co-ops, and research opportunities."
 
 # Files
@@ -36,7 +36,7 @@ project_tags: [Class, Team, Personal, Research]
 # -------------------------------------------------------------
 #  Technical settings — you shouldn't need to change these.
 # -------------------------------------------------------------
-url: "https://olivergurrero07.github.io"
+url: "https://oliverguerrero07.github.io"
 baseurl: ""      # leave empty when the repo is named yourusername.github.io
 markdown: kramdown
 exclude:
