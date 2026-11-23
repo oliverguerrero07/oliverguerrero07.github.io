@@ -1,0 +1,50 @@
+---
+layout: default
+title: About
+---
+{% comment %}
+  HOME / ABOUT page. Your name, tagline, bio, interests and links
+  all come from _config.yml — edit them there.
+{% endcomment %}
+
+<section class="container hero">
+  <div class="hero-text">
+    <p class="eyebrow">{{ site.tagline }}</p>
+    <h1>{{ site.name }}</h1>
+    <div class="bio">{{ site.bio | markdownify }}</div>
+
+    {% if site.interests %}
+    <ul class="chips" aria-label="Interests and skills">
+      {% for item in site.interests %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{{ '/resume/' | relative_url }}">View Resume</a>
+      <a class="btn" href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="{{ '/projects/' | relative_url }}">See projects →</a>
+    </div>
+  </div>
+
+  <div class="hero-photo">
+    <img src="{{ site.photo | relative_url }}" alt="Photo of {{ site.name }}">
+  </div>
+</section>
+
+{% assign projects = site.pages | where: "layout", "project" | where_exp: "p", "p.hidden != true" | sort: "date" | reverse %}
+{% assign featured = projects | where: "featured", true %}
+{% if featured.size == 0 %}{% assign featured = projects %}{% endif %}
+
+{% if featured.size > 0 %}
+<section class="container section">
+  <div class="section-head">
+    <h2>Selected work</h2>
+    <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects →</a>
+  </div>
+  <div class="grid">
+    {% for project in featured limit: 3 %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

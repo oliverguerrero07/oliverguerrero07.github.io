@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% comment %}
+  Simple text page (e.g. a future Experience or Skills page written in Markdown).
+{% endcomment %}
+<section class="container page-head">
+  <h1>{{ page.title }}</h1>
+  {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+</section>
+<div class="container"><div class="prose prose-page">
+  {{ content }}
+</div>
+</div>
+<div class="section"></div>

@@ -1,0 +1,11 @@
+# Files Jekyll creates when building locally (never commit these)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

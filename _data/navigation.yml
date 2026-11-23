@@ -1,0 +1,12 @@
+# Menu links, in order. To add a page later (e.g. Experience),
+# create experience.html (or .md) and add two lines here:
+#
+# - title: Experience
+#   url: /experience/
+
+- title: About
+  url: /
+- title: Projects
+  url: /projects/
+- title: Resume
+  url: /resume/

@@ -1,0 +1,44 @@
+# =============================================================
+#  SITE SETTINGS — edit your personal info here.
+#  (After changing this file, commit + push; GitHub rebuilds the site.)
+# =============================================================
+
+name: Oliver Guerrero
+tagline: "Mechanical Engineering @ Georgia Tech, Class of 2029"
+description: "Engineering portfolio of Oliver Guerrero, mechanical engineering student at Georgia Tech focused on aerospace and energy systems."
+
+# Bio shown on the Home page. Plain text; leave a blank line between paragraphs.
+bio: |
+  I'm currently pursuing a Bachelor of Engineering in Mechanical Engineering at the
+  Georgia Institute of Technology, expected to graduate in 2029.
+
+  I'm skilled in SOLIDWORKS and MATLAB, with a strong interest in aerospace and energy
+  systems, particularly in applying design and analysis to advance flight technologies
+  and sustainable power solutions.
+
+# Little labels shown under the bio. Add/remove freely.
+interests: [Aerospace, Energy Systems, SOLIDWORKS, MATLAB]
+
+# Contact info (shown in the footer of every page)
+email: oliver.guerrerorazo@gmail.com
+linkedin: https://www.linkedin.com/in/oliver-guerrero-razo/
+github_username: ""        # optional — fill in to show a GitHub link in the footer
+footer_note: "Open to internships, co-ops, and research opportunities."
+
+# Files
+photo: /assets/images/profile.svg   # replace with /assets/images/profile.jpg once you add your photo
+resume: /assets/resume.pdf          # replace this PDF with your real resume (keep the same name)
+
+# The tag filter buttons on the Projects page, in this order.
+# A button only appears once at least one project uses that tag.
+project_tags: [Class, Team, Personal, Research]
+
+# -------------------------------------------------------------
+#  Technical settings — you shouldn't need to change these.
+# -------------------------------------------------------------
+url: ""          # e.g. https://yourusername.github.io (optional)
+baseurl: ""      # leave empty when the repo is named yourusername.github.io
+markdown: kramdown
+exclude:
+  - README.md
+  - .gitignore

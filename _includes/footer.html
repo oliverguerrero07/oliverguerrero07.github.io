@@ -1,0 +1,28 @@
+<footer class="site-footer" id="contact">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-title">Get in touch</p>
+      {% if site.footer_note %}<p class="footer-note">{{ site.footer_note }}</p>{% endif %}
+    </div>
+    <ul class="footer-links">
+      <li>
+        <span class="footer-label">Email</span>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </li>
+      <li>
+        <span class="footer-label">LinkedIn</span>
+        <a href="{{ site.linkedin }}" target="_blank" rel="noopener">{{ site.linkedin | remove: "https://" | remove: "www." | split: "/" | join: "/" }}</a>
+      </li>
+      {% if site.github_username and site.github_username != "" %}
+      <li>
+        <span class="footer-label">GitHub</span>
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">github.com/{{ site.github_username }}</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {{ site.time | date: "%Y" }} {{ site.name }}</span>
+    <a href="#main">Back to top ↑</a>
+  </div>
+</footer>

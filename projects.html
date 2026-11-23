@@ -1,0 +1,41 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+{% comment %}
+  PROJECTS page. Built automatically from every projects/<name>/index.md
+  that has "layout: project". Newest (by date) first.
+  You never need to edit this file to add a project.
+{% endcomment %}
+
+{% assign projects = site.pages | where: "layout", "project" | where_exp: "p", "p.hidden != true" | sort: "date" | reverse %}
+
+<section class="container page-head">
+  <h1>Projects</h1>
+  <p class="lede">Design, analysis, and build work from classes, teams, and my own time.</p>
+</section>
+
+<section class="container">
+  <div class="filters" role="group" aria-label="Filter projects by tag">
+    <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">
+      All <span class="count">{{ projects.size }}</span>
+    </button>
+    {% for tag in site.project_tags %}
+      {% assign tagged = projects | where_exp: "p", "p.tags contains tag" %}
+      {% if tagged.size > 0 %}
+      <button class="filter" type="button" data-filter="{{ tag }}" aria-pressed="false">
+        {{ tag }} <span class="count">{{ tagged.size }}</span>
+      </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="grid" id="project-grid">
+    {% for project in projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+
+  <p class="empty-msg" id="empty-msg" hidden>No projects with this tag yet. Check back soon.</p>
+</section>

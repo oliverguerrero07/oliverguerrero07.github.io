@@ -1,0 +1,9 @@
+# Keep consistent line endings for text files
+* text=auto eol=lf
+# Never modify these (binary files)
+*.pdf  binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.gif  binary
+*.webp binary

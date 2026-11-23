@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{% comment %}
+  THE PROJECT PAGE TEMPLATE.
+  Every projects/<name>/index.md with "layout: project" is rendered with this.
+  You shouldn't need to edit this file to add a project.
+{% endcomment %}
+
+<article class="project">
+
+  <header class="container project-hero">
+    <a class="back-link" href="{{ '/projects/' | relative_url }}">← All projects</a>
+    {% if page.tags %}
+    <ul class="tags">
+      {% for t in page.tags %}<li class="tag">{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  {% if page.cover %}
+  <div class="container">
+    <img class="project-cover" src="{{ page.url | append: page.cover | relative_url }}" alt="{{ page.title | escape }}">
+  </div>
+  {% endif %}
+
+  <div class="container">
+    <dl class="facts">
+      {% if page.role %}
+      <div class="fact">
+        <dt>My Role</dt>
+        <dd>{{ page.role }}</dd>
+      </div>
+      {% endif %}
+      {% if page.tools %}
+      <div class="fact">
+        <dt>Tools Used</dt>
+        <dd>
+          <ul class="tool-list">
+            {% for tool in page.tools %}<li>{{ tool }}</li>{% endfor %}
+          </ul>
+        </dd>
+      </div>
+      {% endif %}
+      {% if page.when or page.date %}
+      <div class="fact">
+        <dt>When</dt>
+        <dd>{% if page.when %}{{ page.when }}{% else %}{{ page.date | date: "%B %Y" }}{% endif %}</dd>
+      </div>
+      {% endif %}
+      {% if page.team %}
+      <div class="fact">
+        <dt>Team</dt>
+        <dd>{{ page.team }}</dd>
+      </div>
+      {% endif %}
+    </dl>
+  </div>
+
+  {% comment %} Your writing from index.md (Overview, Process, Results, ...) {% endcomment %}
+  <div class="container prose">
+    {{ content }}
+  </div>
+
+  {% comment %}
+    Gallery: every image inside this project's gallery/ folder, sorted by file name.
+  {% endcomment %}
+  {% assign gallery_dir = page.dir | append: "gallery/" %}
+  {% assign image_exts = ".jpg,.jpeg,.png,.gif,.webp,.svg,.avif,.JPG,.JPEG,.PNG,.GIF,.WEBP,.SVG" | split: "," %}
+  {% assign gallery = site.static_files | where_exp: "f", "f.path contains gallery_dir" | where_exp: "f", "image_exts contains f.extname" | sort: "path" %}
+  {% if gallery.size > 0 %}
+  <section class="container gallery-section" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Gallery</h2>
+    <div class="gallery">
+      {% for img in gallery %}
+        {% assign alt = img.basename | replace: "-", " " | replace: "_", " " %}
+        <a href="{{ img.path | relative_url }}" class="gallery-item">
+          <img src="{{ img.path | relative_url }}" alt="{{ alt | escape }}" loading="lazy">
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <nav class="container project-footer-nav">
+    <a class="btn" href="{{ '/projects/' | relative_url }}">← Back to all projects</a>
+  </nav>
+
+</article>

@@ -1,0 +1,22 @@
+{% comment %}
+  One project card. Used on the Home and Projects pages.
+  Usage: {% include project-card.html project=some_page %}
+{% endcomment %}
+{% assign card = include.project %}
+<a class="card" href="{{ card.url | relative_url }}" data-tags="{{ card.tags | join: '|' }}">
+  <div class="card-img">
+    {% if card.cover %}
+      <img src="{{ card.url | append: card.cover | relative_url }}" alt="{{ card.title | escape }}" loading="lazy">
+    {% endif %}
+  </div>
+  <div class="card-body">
+    {% if card.tags %}
+    <ul class="tags">
+      {% for t in card.tags %}<li class="tag">{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <h3 class="card-title">{{ card.title }}</h3>
+    <p class="card-summary">{{ card.summary }}</p>
+    <span class="card-more">View project <span aria-hidden="true">→</span></span>
+  </div>
+</a>
