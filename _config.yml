@@ -9,7 +9,7 @@ description: "Engineering portfolio of Oliver Guerrero, mechanical engineering s
 
 # Bio shown on the Home page. Plain text; leave a blank line between paragraphs.
 bio: |
-  I'm currently pursuing a Bachelor of Engineering in Mechanical Engineering at the
+  I'm currently pursuing a Bachelor of Science in Mechanical Engineering at the
   Georgia Institute of Technology, expected to graduate in 2029.
 
   I'm skilled in SOLIDWORKS and MATLAB, with a strong interest in aerospace and energy
@@ -22,7 +22,7 @@ interests: [Aerospace, Energy Systems, SOLIDWORKS, MATLAB]
 # Contact info (shown in the footer of every page)
 email: oliver.guerrerorazo@gmail.com
 linkedin: https://www.linkedin.com/in/oliver-guerrero-razo/
-github_username: ""        # optional — fill in to show a GitHub link in the footer
+github_username: "olivergurrero07"      # optional — fill in to show a GitHub link in the footer
 footer_note: "Open to internships, co-ops, and research opportunities."
 
 # Files
@@ -36,7 +36,7 @@ project_tags: [Class, Team, Personal, Research]
 # -------------------------------------------------------------
 #  Technical settings — you shouldn't need to change these.
 # -------------------------------------------------------------
-url: ""          # e.g. https://yourusername.github.io (optional)
+url: "https://olivergurrero07.github.io"
 baseurl: ""      # leave empty when the repo is named yourusername.github.io
 markdown: kramdown
 exclude:
